@@ -59,4 +59,7 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  config.action_dispatch.rescue_responses["Rack::Timeout::Error"] = :request_timeout
+  config.action_dispatch.rescue_responses["Rack::Timeout::RequestTimeoutException"] = :request_timeout
 end
