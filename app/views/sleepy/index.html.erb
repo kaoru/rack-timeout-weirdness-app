@@ -1,0 +1,5 @@
+<% if @sleep > 0 %>
+  Sleepy app slept for <%= pluralize(@sleep, 'second') %> before waking up to show you this message.
+<% else %>
+  Sleep app is wide awake! Unusual...
+<% end %>
